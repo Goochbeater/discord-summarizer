@@ -78,7 +78,7 @@ async def fetch_messages(channel, limit: int = None, hours: int = None):
     
     fetch_limit = min(limit or DEFAULT_MESSAGES, MAX_MESSAGES)
     
-    async for message in channel.history(limit=fetch_limit, after=after_time, oldest_first=True):
+    async for message in channel.history(limit=fetch_limit, after=after_time, oldest_first=False):
         if message.author.bot:
             continue
             
